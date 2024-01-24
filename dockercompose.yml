@@ -1,10 +1,22 @@
 version: '3.5'
 services:
  rimworld:
-  image: rimworldserver:latest
+  #image: rimworldserver:latest
+  build: .
   container_name: rimworld-server
   ports:
    - "25555:25555"
+  volumes:
+   - /etc/localtime:/etc/localtime:ro
+   - /etc/timezone:/etc/timezone:ro
+   - ./config/Core:/opt/app/rimworld-server/Core
+   - ./config/Factions:/opt/app/rimworld-server/Factions
+   - ./config/Logs:/opt/app/rimworld-server/Logs
+   - ./config/Saves:/opt/app/rimworld-server/Saves
+   - ./config/Settlements:/opt/app/rimworld-server/Settlements
+   - ./config/Sites:/opt/app/rimworld-server/Sites
+   - ./config/Users:/opt/app/rimworld-server/Users
+
   networks:
     rimworld_frontend:
 networks:
