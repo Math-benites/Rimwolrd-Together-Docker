@@ -1,4 +1,4 @@
-<h1 align="center">Zabbix - Compose </h1>
+<h1 align="center">Rimwolrd Together Docker </h1>
 
 ### Pré-requisitos
 
