@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+ rimworld:
+  image: rimworldserver:latest
+  container_name: rimworld-server
+  ports:
+   - "25555:25555"
+  networks:
+    rimworld_frontend:
+networks:
+  rimworld_frontend:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
